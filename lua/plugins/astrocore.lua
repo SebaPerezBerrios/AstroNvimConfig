@@ -35,12 +35,14 @@ return {
         foldenable = false,
         scrolloff = 3,
         sidescrolloff = 3,
-        guifont = "JetBrainsMono NFM:h14.5",
+        guifont = "JetBrainsMono NFM:h9",
       },
       g = { -- vim.g.<key>
         -- configure global vim variables (vim.g)
         -- NOTE: `mapleader` and `maplocalleader` must be set in the AstroNvim opts or before `lazy.setup`
         -- This can be found in the `lua/lazy_setup.lua` file
+        -- neovide_cursor_animation_length = 0,
+        neovide_cursor_animate_command_line = false,
       },
     },
     -- Mappings can be configured through AstroCore as well.

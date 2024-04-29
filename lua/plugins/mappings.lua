@@ -1,3 +1,21 @@
+local actions_state = require "telescope.actions.state"
+
+local function close_buffer(prompt_bufnr)
+  local selected_entry = actions_state.get_selected_entry()
+  require("astrocore.buffer").close(selected_entry.bufnr, true)
+  local line = actions_state.get_current_line()
+
+  require("telescope.builtin").buffers {
+    no_ignore = true,
+    default_text = line,
+    initial_mode = "normal",
+    attach_mappings = function(_, map)
+      map("n", "B", close_buffer)
+      return true
+    end,
+  }
+end
+
 return {
   {
     "AstroNvim/astrocore",
@@ -139,6 +157,24 @@ return {
       opts.mappings.n["<Leader>f"] = opts.mappings.n["<Leader>fw"]
       opts.mappings.n["<Leader>F"] = opts.mappings.n["<Leader>fW"]
       opts.mappings.n["<Leader>b"] = opts.mappings.n["<Leader>fb"]
+
+      -- local current_picker = actions_state.get_current_picker(prompt_bufnr)
+      -- current_picker:refresh(require("telescope.finders").new_oneshot_job({}, {}), {})
+
+      local telescope_find = function()
+        require("telescope.builtin").buffers {
+          attach_mappings = function(_, map)
+            map("n", "B", close_buffer)
+            return true
+          end,
+        }
+      end
+
+      opts.mappings.n["<Leader>b"] = {
+        telescope_find,
+        desc = "Close buffers",
+      }
+
       opts.mappings.n["<Leader>;"] = { ":BufferLinePick<CR>" }
       opts.mappings.n["<Leader>pt"] = opts.mappings.n["<Leader>ft"]
       opts.mappings.n["<Leader>x"] = opts.mappings.n["<Leader>f/"]
@@ -209,6 +245,21 @@ return {
 
       opts.mappings.v["J"] = { "<Nop>" }
       opts.mappings.v["K"] = { "<Nop>" }
+
+      if vim.g.neovide then
+        vim.keymap.set("n", "<D-s>", ":w<CR>") -- Save
+        vim.keymap.set("v", "<C-c>", '"+y') -- Copy
+        vim.keymap.set("n", "<C-v>", '"+P') -- Paste normal mode
+        vim.keymap.set("v", "<C-v>", '"+P') -- Paste visual mode
+        vim.keymap.set("c", "<C-v>", "<C-R>+") -- Paste command mode
+        vim.keymap.set("i", "<C-v>", '<ESC>l"+Pli') -- Paste insert mode
+      end
+
+      -- Allow clipboard copy paste in neovim
+      vim.api.nvim_set_keymap("", "<C-v>", "+p<CR>", { noremap = true, silent = true })
+      vim.api.nvim_set_keymap("!", "<C-v>", "<C-R>+", { noremap = true, silent = true })
+      vim.api.nvim_set_keymap("t", "<C-v>", "<C-R>+", { noremap = true, silent = true })
+      vim.api.nvim_set_keymap("v", "<C-v>", "<C-R>+", { noremap = true, silent = true })
     end,
   },
 }
