@@ -49,6 +49,7 @@ return {
   {
     "windwp/nvim-autopairs",
     config = function(plugin, opts)
+      opts.enable_check_bracket_line = false
       require "astronvim.plugins.configs.nvim-autopairs"(plugin, opts) -- include the default astronvim config that calls the setup call
       -- add more custom autopairs configuration such as custom rules
       local npairs = require "nvim-autopairs"

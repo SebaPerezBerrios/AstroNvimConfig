@@ -35,7 +35,9 @@ return {
         foldenable = false,
         scrolloff = 3,
         sidescrolloff = 3,
-        guifont = "JetBrainsMono NFM:h9",
+        guifont = "JetBrainsMono NFM:h10.5",
+        pumblend = 20,
+        winblend = 20,
       },
       g = { -- vim.g.<key>
         -- configure global vim variables (vim.g)
