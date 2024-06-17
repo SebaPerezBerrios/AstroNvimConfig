@@ -27,7 +27,7 @@ return {
       opts.mappings.n["<Leader>w"] = { "<cmd>w<cr>", desc = "Save" }
       opts.mappings.n["<Leader>q"] = { "<cmd>confirm q<cr>", desc = "Quit" }
       opts.mappings.n["<Leader>Q"] = { "<cmd>qa<cr>", desc = "Quit all windows" }
-      opts.mappings.n["<Leader>e"] = { "<cmd>enew<cr>", desc = "New File" }
+      opts.mappings.n["<Leader>nf"] = { "<cmd>enew<cr>", desc = "New File" }
       opts.mappings.n["xv"] = { "<cmd>vsplit<cr>", desc = "Vertical Split" }
       opts.mappings.n["xs"] = { "<cmd>split<cr>", desc = "Horizontal Split" }
 
@@ -227,6 +227,7 @@ return {
 
       opts.mappings.n["<Leader>rn"] = { ":Lspsaga rename<CR>", desc = "LSP rename" }
       opts.mappings.n["<Leader>i"] = { ":Lspsaga code_action<CR>", desc = "LSP code action" }
+      opts.mappings.v["<Leader>i"] = { ":Lspsaga code_action<CR>", desc = "LSP code action" }
 
       opts.mappings.n["gn"] = {
         function() require("lspsaga.diagnostic"):goto_next { severity = vim.diagnostic.severity.ERROR } end,

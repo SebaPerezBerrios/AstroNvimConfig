@@ -1,7 +1,6 @@
 return {
   {
-    "glepnir/lspsaga.nvim",
-    commit = "0add23a82288af0d81ddb6177496b49f3e247cfb",
+    "nvimdev/lspsaga.nvim",
     lazy = false,
     config = function()
       require("lspsaga").setup {

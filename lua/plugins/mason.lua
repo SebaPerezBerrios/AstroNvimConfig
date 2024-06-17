@@ -11,7 +11,9 @@ return {
       opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, {
         "lua_ls",
         -- add more arguments for adding more language servers
-        "tsserver", "eslint", "jsonls",
+        "tsserver",
+        "eslint",
+        "jsonls",
       })
     end,
   },
@@ -32,9 +34,9 @@ return {
           require("null-ls").register(require("null-ls").builtins.formatting.prettierd.with {
             condition = function(utils)
               return utils.root_has_file "package.json"
-                  or utils.root_has_file ".prettierrc"
-                  or utils.root_has_file ".prettierrc.json"
-                  or utils.root_has_file ".prettierrc.js"
+                or utils.root_has_file ".prettierrc"
+                or utils.root_has_file ".prettierrc.json"
+                or utils.root_has_file ".prettierrc.js"
             end,
           })
         end,
