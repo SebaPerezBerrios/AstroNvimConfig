@@ -1,22 +1,9 @@
 return {
   {
-    "catppuccin/nvim",
-    as = "catppuccin",
-    lazy = false,
-    config = function()
-      require("catppuccin").setup {
-        flavour = "mocha", -- latte, frappe, macchiato, mocha
-        background = { -- :h background
-          light = "latte",
-          dark = "mocha",
-        },
-        transparent_background = false, -- disables setting the background color.
-      }
-    end,
-  },
-  {
     "sainnhe/gruvbox-material",
-    init = function()
+    lazy = false,
+    priority = 1000,
+    config = function()
       vim.o.background = "dark"
       -- vim.o.background = "light"
       vim.g.gruvbox_material_foreground = "original"
