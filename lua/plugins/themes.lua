@@ -16,7 +16,6 @@ return {
   },
   {
     "sainnhe/gruvbox-material",
-    lazy = false,
     init = function()
       vim.o.background = "dark"
       -- vim.o.background = "light"
