@@ -136,4 +136,20 @@ return {
     "kevinhwang91/nvim-ufo",
     enabled = false,
   },
+
+  {
+    "rcarriga/nvim-notify",
+    enabled = false,
+    opts = {
+      routes = {
+        {
+          filter = {
+            event = "notify",
+            find = "Request textDocument/inlayHint failed",
+          },
+          opts = { skip = true },
+        },
+      },
+    },
+  },
 }

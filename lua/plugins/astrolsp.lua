@@ -49,7 +49,7 @@ return {
     ---@diagnostic disable: missing-fields
     config = {
       -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
-      eslint = { root_dir = util.root_pattern ".git" },
+      -- eslint = { root_dir = util.root_pattern ".git" },
       tsserver = { root_dir = util.root_pattern ".git" },
       -- end
     },
