@@ -80,7 +80,7 @@ return {
         end,
         desc = "Search diagnostics",
       }
-      opts.mappings.n["<Leader>lL"] = {
+      opts.mappings.n["<Leader>ld"] = {
         function()
           require("telescope.builtin").diagnostics {
             initial_mode = "normal",
@@ -203,6 +203,7 @@ return {
       opts.mappings.n["<Leader>ff"] = nil
       opts.mappings.n["<Leader>fF"] = nil
       opts.mappings.n["<Leader>fh"] = nil
+      opts.mappings.n["<Leader>fg"] = nil
       opts.mappings.n["<Leader>km"] = nil
       opts.mappings.n["<Leader>fm"] = nil
       opts.mappings.n["<Leader>fn"] = nil

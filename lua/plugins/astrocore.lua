@@ -35,7 +35,7 @@ return {
         foldenable = false,
         scrolloff = 3,
         sidescrolloff = 3,
-        guifont = "JetBrainsMono NFM:h10.5",
+        guifont = "JetBrainsMono NFM Medium:h10.5",
         pumblend = 20,
         winblend = 20,
       },
