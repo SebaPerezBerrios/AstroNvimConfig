@@ -18,8 +18,9 @@ return {
         -- define the separators between each section
         separators = {
           left = { "", "" }, -- separator for the left side of the statusline
-          right = { " ", "" }, -- separator for the right side of the statusline
+          right = { "", "" }, -- separator for the right side of the statusline
           tab = { "", "" },
+          dash = { "", "" },
         },
         -- add new colors that can be used by heirline
         colors = function(hl)
@@ -32,13 +33,15 @@ return {
           hl.git_removed = comment_fg
           hl.blank_bg = get_hlgroup("Folded").fg
           hl.file_info_bg = get_hlgroup("Visual").bg
-          hl.nav_icon_bg = get_hlgroup("String").fg
-          hl.nav_fg = hl.nav_icon_bg
+          hl.nav_fg = get_hlgroup("Folded").bg
+          hl.nav_bg = get_hlgroup("Folded").fg
+          hl.lsp_bg = get_hlgroup("Visual").bg
           hl.folder_icon_bg = get_hlgroup("Error").fg
           return hl
         end,
         attributes = {
           mode = { bold = true },
+          nav = { bold = true },
         },
         icon_highlights = {
           file_icon = {
@@ -120,18 +123,20 @@ return {
         -- fill the rest of the statusline
         -- the elements after this will appear on the right of the statusline
         status.component.fill(),
-        -- add a component to display LSP clients, disable showing LSP progress, and use the right separator
+        -- add a component to display LSP clients
         status.component.lsp {
-          lsp_progress = false,
-          surround = { separator = "right" },
+          surround = { separator = "right", color = { main = "file_info_bg" } },
+          padding = { right = 1 },
         },
-        -- add a component to display if the LSP is loading, disable showing running client names, and use no separator
-        status.component.lsp {
-          lsp_client_names = false,
-          surround = { separator = "none", color = "bg" },
-          padding = { left = 1, right = 1 },
+        status.component.builder {
+          { provider = "" },
+          -- define the surrounding separator and colors to be used inside of the component
+          -- and the color to the right of the separated out section
+          surround = {
+            separator = "right",
+            color = { main = "blank_bg", left = "file_info_bg", right = "nav_bg" },
+          },
         },
-
         status.component.nav {
           -- add some padding for the percentage provider
           percentage = { padding = { right = 1 } },
@@ -139,7 +144,7 @@ return {
           -- ruler = false,
           scrollbar = false,
           -- use no separator and define the background color
-          surround = { separator = "right", color = "file_info_bg" },
+          surround = { separator = "none" },
         },
       }
 
