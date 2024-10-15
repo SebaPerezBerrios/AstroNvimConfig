@@ -4,8 +4,6 @@ return {
     lazy = false,
     priority = 1000,
     config = function()
-      vim.o.background = "dark"
-      -- vim.o.background = "light"
       vim.g.gruvbox_material_foreground = "original"
       vim.g.gruvbox_material_background = "medium"
       vim.g.gruvbox_material_dim_inactive_windows = "1"
@@ -16,6 +14,7 @@ return {
         -- floating popups
         command = "hi NormalFloat guibg=#282828 |" .. "hi FloatBorder guibg=#282828",
         -- command = "hi NormalFloat guibg=#FBF1C7 |" .. "hi FloatBorder guibg=#FBF1C7",
+        -- command = "hi NormalFloat guibg=#f1e4bb |" .. "hi FloatBorder guibg=#f1e4bb",
       })
     end,
   },
@@ -39,7 +38,8 @@ return {
         overrides = function(colors)
           local theme = colors.theme
           return {
-            NormalFloat = { bg = "#1f1f28" },
+            -- NormalFloat = { bg = "#1f1f28" },
+            NormalFloat = { bg = "#f1ebbb" },
             -- NormalFloat = { bg = "None" },
             FloatBorder = { bg = "none" },
             FloatTitle = { bg = "none" },

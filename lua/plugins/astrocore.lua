@@ -38,6 +38,7 @@ return {
         guifont = "JetBrainsMono NF Medium:h10.2",
         pumblend = 20,
         winblend = 20,
+        background = "dark",
       },
       g = { -- vim.g.<key>
         -- configure global vim variables (vim.g)
@@ -45,6 +46,7 @@ return {
         -- This can be found in the `lua/lazy_setup.lua` file
         -- neovide_cursor_animation_length = 0,
         neovide_cursor_animate_command_line = false,
+        neovide_floating_shadow = false,
       },
     },
     -- Mappings can be configured through AstroCore as well.
