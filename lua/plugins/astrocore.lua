@@ -36,8 +36,8 @@ return {
         scrolloff = 3,
         sidescrolloff = 3,
         guifont = "JetBrainsMono NF Medium:h10.2",
-        pumblend = 20,
-        winblend = 20,
+        pumblend = 0,
+        winblend = 0,
         background = "dark",
       },
       g = { -- vim.g.<key>
