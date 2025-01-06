@@ -50,7 +50,10 @@ return {
     config = {
       clangd = { capabilities = { offsetEncoding = "utf-8" } },
       eslint = { root_dir = util.root_pattern ".git" },
-      ts_ls = { root_dir = util.root_pattern ".git" },
+      ts_ls = {
+        root_dir = util.root_pattern ".git",
+        init_options = { preferences = { importModuleSpecifierPreference = "project-relative" } },
+      },
       -- end
     },
     -- customize how language servers are attached
