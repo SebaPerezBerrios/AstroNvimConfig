@@ -38,8 +38,8 @@ return {
         overrides = function(colors)
           local theme = colors.theme
           return {
-            -- NormalFloat = { bg = "#1f1f28" },
-            NormalFloat = { bg = "#f1ebbb" },
+            NormalFloat = { bg = "#1f1f28" },
+            -- NormalFloat = { bg = "#f1ebbb" },
             -- NormalFloat = { bg = "None" },
             FloatBorder = { bg = "none" },
             FloatTitle = { bg = "none" },
