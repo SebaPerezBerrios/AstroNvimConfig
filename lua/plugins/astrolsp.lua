@@ -33,7 +33,8 @@ return {
       disabled = { -- disable formatting capabilities for the listed language servers
         -- disable lua_ls formatting capability if you want to use StyLua to format your lua code
         -- "lua_ls",
-        "ts_ls",
+        -- "ts_ls",
+        "vtsls",
         "lua_ls",
       },
       timeout_ms = 2000, -- default format timeout
@@ -50,10 +51,15 @@ return {
     config = {
       clangd = { capabilities = { offsetEncoding = "utf-8" } },
       eslint = { root_dir = util.root_pattern ".git" },
-      ts_ls = {
+
+      vtsls = {
         root_dir = util.root_pattern ".git",
         init_options = { preferences = { importModuleSpecifierPreference = "project-relative" } },
       },
+      -- ts_ls = {
+      --   root_dir = util.root_pattern ".git",
+      --   init_options = { preferences = { importModuleSpecifierPreference = "project-relative" } },
+      -- },
       -- end
     },
     -- customize how language servers are attached

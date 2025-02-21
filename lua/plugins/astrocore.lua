@@ -36,8 +36,8 @@ return {
         scrolloff = 3,
         sidescrolloff = 3,
         guifont = "JetBrainsMono NF Medium:h10.2",
-        pumblend = 0,
-        winblend = 0,
+        pumblend = 30,
+        winblend = 30,
         background = "dark",
       },
       g = { -- vim.g.<key>
@@ -46,6 +46,7 @@ return {
         -- This can be found in the `lua/lazy_setup.lua` file
         -- neovide_cursor_animation_length = 0,
         neovide_cursor_animate_command_line = false,
+        -- neovide_cursor_animation_length = 0.00,
         neovide_floating_shadow = false,
       },
     },

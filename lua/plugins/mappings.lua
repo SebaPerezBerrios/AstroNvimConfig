@@ -254,6 +254,9 @@ return {
         vim.keymap.set("v", "<C-S-v>", '"+P') -- Paste visual mode
         vim.keymap.set("c", "<C-S-v>", "<C-R>+") -- Paste command mode
         vim.keymap.set("i", "<C-S-v>", '<ESC>l"+Pli') -- Paste insert mode
+        vim.keymap.set({ "n", "v" }, "<C-+>", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + 0.1<CR>")
+        vim.keymap.set({ "n", "v" }, "<C-->", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.1<CR>")
+        vim.keymap.set({ "n", "v" }, "<C-0>", ":lua vim.g.neovide_scale_factor = 1<CR>")
       end
 
       -- Allow clipboard copy paste in neovim
