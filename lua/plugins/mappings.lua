@@ -134,10 +134,10 @@ return {
       opts.mappings.v["e"] = { "<Plug>CamelCaseMotion_e", desc = "e" }
       opts.mappings.v["ge"] = { "<Plug>CamelCaseMotion_ge", desc = "ge" }
 
-      opts.mappings.n["<Leader>s"] = { ":HopChar2<CR>", desc = "Search 2 chars" }
-      opts.mappings.n["<Leader>j"] = { ":HopLineAC<CR>", desc = "Jump down" }
-      opts.mappings.n["<Leader>k"] = { ":HopLineBC<CR>", desc = "Jump up" }
-      opts.mappings.n["f"] = { "::HopWordCurrentLine<CR>", desc = "Jump current line" }
+      opts.mappings.n["<Leader>s"] = { "<cmd>HopChar2<CR>", desc = "Search 2 chars" }
+      opts.mappings.n["<Leader>j"] = { "<cmd>HopLineAC<CR>", desc = "Jump down" }
+      opts.mappings.n["<Leader>k"] = { "<cmd>HopLineBC<CR>", desc = "Jump up" }
+      opts.mappings.n["f"] = { "<cmd>HopWordCurrentLine<CR>", desc = "Jump current line" }
       -- opts.mappings.n["f"] = { "<cmd>lua require'hop'.hint_char1({ current_line_only = true })<cr>", desc = "Search char on line" }
 
       -- Macro
@@ -175,7 +175,7 @@ return {
         desc = "Close buffers",
       }
 
-      opts.mappings.n["<Leader>;"] = { ":BufferLinePick<CR>" }
+      opts.mappings.n["<Leader>;"] = { "<cmd>BufferLinePick<CR>" }
       opts.mappings.n["<Leader>pt"] = opts.mappings.n["<Leader>ft"]
       opts.mappings.n["<Leader>x"] = opts.mappings.n["<Leader>f/"]
       opts.mappings.n["<Leader>c"] = opts.mappings.n["<Leader>fC"]
@@ -226,9 +226,9 @@ return {
 
       opts.mappings.n["<Leader>n"] = nil
 
-      opts.mappings.n["<Leader>rn"] = { ":Lspsaga rename<CR>", desc = "LSP rename" }
-      opts.mappings.n["<Leader>i"] = { ":Lspsaga code_action<CR>", desc = "LSP code action" }
-      opts.mappings.v["<Leader>i"] = { ":Lspsaga code_action<CR>", desc = "LSP code action" }
+      opts.mappings.n["<Leader>rn"] = { "<cmd>Lspsaga rename<CR>", desc = "LSP rename" }
+      opts.mappings.n["<Leader>i"] = { "<cmd>Lspsaga code_action<CR>", desc = "LSP code action" }
+      opts.mappings.v["<Leader>i"] = { "<cmd>Lspsaga code_action<CR>", desc = "LSP code action" }
 
       opts.mappings.n["gn"] = {
         function() require("lspsaga.diagnostic"):goto_next { severity = vim.diagnostic.severity.ERROR } end,
@@ -238,10 +238,10 @@ return {
         function() require("lspsaga.diagnostic"):goto_prev { severity = vim.diagnostic.severity.ERROR } end,
         desc = "LSP diagnostics prev",
       }
-      opts.mappings.n["gh"] = { ":Lspsaga hover_doc<CR>", desc = "LSP hover" }
+      opts.mappings.n["gh"] = { "<cmd>Lspsaga hover_doc<CR>", desc = "LSP hover" }
 
-      opts.mappings.n["<Leader>D"] = { ":DiffviewOpen<CR>", desc = "Diff view Open" }
-      opts.mappings.n["<Leader>S"] = { ":DiffviewClose<CR>", desc = "Diff view Close" }
+      opts.mappings.n["<Leader>D"] = { "<cmd>DiffviewOpen<CR>", desc = "Diff view Open" }
+      opts.mappings.n["<Leader>S"] = { "<cmd>DiffviewClose<CR>", desc = "Diff view Close" }
       opts.mappings.n["`"] = { "<Esc>" }
       opts.mappings.n["x"] = { "<Esc>" }
 
@@ -254,9 +254,17 @@ return {
         vim.keymap.set("v", "<C-S-v>", '"+P') -- Paste visual mode
         vim.keymap.set("c", "<C-S-v>", "<C-R>+") -- Paste command mode
         vim.keymap.set("i", "<C-S-v>", '<ESC>l"+Pli') -- Paste insert mode
-        vim.keymap.set({ "n", "v" }, "<C-+>", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + 0.1<CR>")
-        vim.keymap.set({ "n", "v" }, "<C-->", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.1<CR>")
-        vim.keymap.set({ "n", "v" }, "<C-0>", ":lua vim.g.neovide_scale_factor = 1<CR>")
+        vim.keymap.set(
+          { "n", "v" },
+          "<C-+>",
+          "<cmd>lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + 0.1<CR>"
+        )
+        vim.keymap.set(
+          { "n", "v" },
+          "<C-->",
+          "<cmd>lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.1<CR>"
+        )
+        vim.keymap.set({ "n", "v" }, "<C-0>", "<cmd>lua vim.g.neovide_scale_factor = 1<CR>")
       end
 
       -- Allow clipboard copy paste in neovim
