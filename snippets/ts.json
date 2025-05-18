@@ -1,0 +1,12 @@
+{
+  "console-log": {
+    "prefix": ["cl", "co", "console"],
+    "body": ["console.log($1)"],
+    "description": "Console log"
+  },
+  "console-dir": {
+    "prefix": ["cd", "dir"],
+    "body": ["console.dir($1, {depth: null})"],
+    "description": "Console dir"
+  }
+}
