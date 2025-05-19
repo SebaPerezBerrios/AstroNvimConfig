@@ -121,6 +121,7 @@ return {
         -- the elements after this will appear in the middle of the statusline
         status.component.fill(),
         -- fill the rest of the statusline
+        -- status.component.fill(),
         -- the elements after this will appear on the right of the statusline
         -- status.component.fill(),
         -- add a component to display LSP clients
