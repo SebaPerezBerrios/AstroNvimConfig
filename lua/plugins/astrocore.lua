@@ -27,6 +27,7 @@ return {
         wrap = false, -- sets vim.opt.wrap
         showtabline = 2,
         laststatus = 2,
+        background = "dark",
       },
     },
   },
