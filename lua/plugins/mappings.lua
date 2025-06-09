@@ -62,10 +62,6 @@ return {
         end,
         desc = "Search diagnostics",
       }
-      opts.mappings.n["<Leader>ls"] = {
-        function() require("snacks.picker").lsp_symbols() end,
-        desc = "Search symbols",
-      }
       opts.mappings.n["<Leader>m"] = {
         function() require("snacks.picker").resume() end,
         desc = "Resume last picker",

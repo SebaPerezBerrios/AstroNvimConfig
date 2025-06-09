@@ -32,12 +32,22 @@ return {
         cond = "textDocument/implementation",
       }
 
-      opts.mappings.n.gs = {
+      opts.mappings.n["<Leader>ls"] = {
         function() require("snacks.picker").lsp_symbols {} end,
         desc = "LSP Document Symbols",
       }
 
-      opts.mappings.n.gS = {
+      opts.mappings.n["<Leader>ld"] = {
+        function()
+          require("snacks.picker").diagnostics {
+            focus = "list",
+            severity = vim.diagnostic.severity.ERROR,
+          }
+        end,
+        desc = "Search diagnostics",
+      }
+
+      opts.mappings.n["<Leader>lw"] = {
         function() require("snacks.picker").lsp_workspace_symbols {} end,
         desc = "LSP Workspace Symbols",
       }
