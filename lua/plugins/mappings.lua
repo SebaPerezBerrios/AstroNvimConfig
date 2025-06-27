@@ -63,7 +63,11 @@ return {
         desc = "Search diagnostics",
       }
       opts.mappings.n["<Leader>m"] = {
-        function() require("snacks.picker").resume() end,
+        function()
+          require("snacks.picker").resume {
+            focus = "list",
+          }
+        end,
         desc = "Resume last picker",
       }
 

@@ -7,6 +7,7 @@ return {
     formatting = {
       disabled = {
         "vtsls",
+        "eslint",
       },
     },
   },
