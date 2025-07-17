@@ -10,8 +10,8 @@ return {
       opt = { -- configure vim.opt options
         -- configure font
         guifont = "JetBrainsMono NF Medium:h10.2",
-        pumblend = 30,
-        winblend = 30,
+        pumblend = 20,
+        winblend = 20,
         -- line spacing
         linespace = 0,
       },
@@ -25,6 +25,7 @@ return {
         neovide_padding_left = 0,
         neovide_cursor_animate_command_line = false,
         neovide_floating_shadow = false,
+        neovide_opacity = 0.8,
       },
     },
   },

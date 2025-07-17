@@ -216,6 +216,9 @@ return {
       opts.mappings.v["J"] = { "<Nop>" }
       opts.mappings.v["K"] = { "<Nop>" }
 
+      opts.mappings.n["<C-o>"] = { "<cmd>Portal jumplist backward<cr>" }
+      opts.mappings.n["<C-i>"] = { "<cmd>Portal jumplist forward<cr>" }
+
       if vim.g.neovide then
         vim.keymap.set("v", "<C-S-c>", '"+y') -- Copy
         vim.keymap.set("n", "<C-S-v>", '"+P') -- Paste normal mode
