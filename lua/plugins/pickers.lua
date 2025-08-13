@@ -107,6 +107,23 @@ return {
         end
         opts.mappings.n["<Leader>lR"] = nil
       end
+
+      opts.mappings.n["<Leader>Km"] = {
+        function() require("snacks.picker").keymaps() end,
+        desc = "Find keymaps",
+      }
+      opts.mappings.n["<Leader>/"] = {
+        function() require("snacks.picker").lines {} end,
+        desc = "Find on current buffer",
+      }
+      opts.mappings.n["<Leader>m"] = {
+        function()
+          require("snacks.picker").resume {
+            focus = "list",
+          }
+        end,
+        desc = "Resume last picker",
+      }
     end,
   },
 }

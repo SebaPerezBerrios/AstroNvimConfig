@@ -25,7 +25,7 @@ return {
         neovide_padding_left = 0,
         neovide_cursor_animate_command_line = false,
         neovide_floating_shadow = false,
-        neovide_opacity = 0.8,
+        neovide_opacity = 1,
       },
     },
   },
