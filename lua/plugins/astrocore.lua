@@ -17,11 +17,11 @@ return {
       highlighturl = true, -- highlight URLs at start
       notifications = true, -- enable notifications at start
     },
-    -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
-    diagnostics = {
-      virtual_text = true,
-      underline = true,
-    },
+    -- -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
+    -- diagnostics = {
+    --   virtual_text = true,
+    --   underline = true,
+    -- },
     -- passed to `vim.filetype.add`
     filetypes = {
       -- see `:h vim.filetype.add` for usage

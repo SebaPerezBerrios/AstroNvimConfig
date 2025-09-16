@@ -5,7 +5,8 @@ return {
     priority = 1000,
     config = function()
       vim.g.gruvbox_material_foreground = "original"
-      vim.g.gruvbox_material_background = "medium"
+      vim.g.gruvbox_material_enable_bold = 1
+      vim.g.gruvbox_material_background = "light"
       vim.g.gruvbox_material_dim_inactive_windows = "1"
       local grpid = vim.api.nvim_create_augroup("custom_highlights_gruvboxmaterial", {})
       vim.api.nvim_create_autocmd("ColorScheme", {

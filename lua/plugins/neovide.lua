@@ -10,8 +10,8 @@ return {
       opt = { -- configure vim.opt options
         -- configure font
         guifont = "JetBrainsMono NF Medium:h10.2",
-        pumblend = 0,
-        winblend = 0,
+        pumblend = 20,
+        winblend = 20,
         -- line spacing
         linespace = 0,
       },
