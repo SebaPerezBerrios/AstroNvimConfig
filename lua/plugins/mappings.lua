@@ -48,15 +48,15 @@ return {
     opts.mappings.t["<C-x>"] = { "<C-\\><C-n>", desc = "Terminal normal mode" }
 
     -- Replace
-    opts.mappings.n["gr"] = {
+    opts.mappings.n["rm"] = {
       function() require("substitute").operator() end,
       desc = "Replace motion",
     }
-    opts.mappings.n["grr"] = {
+    opts.mappings.n["rmm"] = {
       function() require("substitute").line() end,
       desc = "Replace line",
     }
-    opts.mappings.v["gr"] = {
+    opts.mappings.v["rm"] = {
       function() require("substitute").visual() end,
       desc = "Replace selection",
     }
