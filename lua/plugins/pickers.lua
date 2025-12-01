@@ -53,6 +53,24 @@ return {
         desc = "Search diagnostics",
       }
 
+      opts.mappings.n["<Leader>;"] = {
+        function()
+          require("snacks.picker").lsp_outgoing_calls {
+            focus = "list",
+          }
+        end,
+        desc = "Incoming calls",
+      }
+
+      opts.mappings.n["<Leader>'"] = {
+        function()
+          require("snacks.picker").lsp_incoming_calls {
+            focus = "list",
+          }
+        end,
+        desc = "Incoming calls",
+      }
+
       opts.mappings.n["<Leader>lw"] = {
         function() require("snacks.picker").lsp_workspace_symbols {} end,
         desc = "LSP Workspace Symbols",
@@ -102,7 +120,7 @@ return {
         opts.mappings.n.gf[1] = function()
           require("snacks.picker").lsp_references {
             focus = "list",
-            include_current = true,
+            include_current = false,
           }
         end
         opts.mappings.n["<Leader>lR"] = nil
