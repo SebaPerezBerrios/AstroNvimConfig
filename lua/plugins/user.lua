@@ -60,7 +60,7 @@ return {
   },
 
   {
-    "aznhe21/hop.nvim",
+    "smoka7/hop.nvim",
     lazy = false,
     config = function() require("hop").setup {} end,
   },

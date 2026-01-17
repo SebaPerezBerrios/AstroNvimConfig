@@ -70,11 +70,11 @@ return {
     opts.mappings.v["e"] = { "<Plug>CamelCaseMotion_e", desc = "e" }
     opts.mappings.v["ge"] = { "<Plug>CamelCaseMotion_ge", desc = "ge" }
 
-    opts.mappings.n["<Leader>s"] = { "<cmd>HopChar2<CR>", desc = "Search 2 chars" }
     opts.mappings.n["<Leader>j"] = { "<cmd>HopLineAC<CR>", desc = "Jump down" }
     opts.mappings.n["<Leader>k"] = { "<cmd>HopLineBC<CR>", desc = "Jump up" }
     opts.mappings.n["f"] = { "<cmd>HopWordCurrentLine<CR>", desc = "Jump current line" }
-    -- opts.mappings.n["f"] = { "<cmd>lua require'hop'.hint_char1({ current_line_only = true })<cr>", desc = "Search char on line" }
+    opts.mappings.n["<CR>"] = { "<cmd>HopWord<CR>", desc = "Jump word" }
+    opts.mappings.n["dj"] = { "<cmd>HopNodes<CR>", desc = "Jump Tree sitter nodes" }
 
     -- Macro
     opts.mappings.n["q"] = { "<nop>", desc = "q" }
@@ -85,10 +85,6 @@ return {
 
     -- C-c
     opts.mappings.n["<C-c>"] = { "<nop>", desc = "<C-c>" }
-
-    -- Delete
-    opts.mappings.n["dj"] = { "j", desc = "j" }
-    opts.mappings.n["dk"] = { "k", desc = "k" }
 
     opts.mappings.n["<Leader>f"] = opts.mappings.n["<Leader>fw"]
     opts.mappings.n["<Leader>F"] = opts.mappings.n["<Leader>fW"]
@@ -111,7 +107,7 @@ return {
       desc = "List buffers",
     }
 
-    opts.mappings.n["<Leader>;"] = { "<cmd>BufferLinePick<CR>" }
+    opts.mappings.n["<Leader>e"] = { "<cmd>BufferLinePick<CR>" }
     opts.mappings.n["<Leader>pt"] = opts.mappings.n["<Leader>ft"]
     opts.mappings.n["<Leader>x"] = opts.mappings.n["<Leader>f/"]
     opts.mappings.n["<Leader>c"] = opts.mappings.n["<Leader>fC"]
