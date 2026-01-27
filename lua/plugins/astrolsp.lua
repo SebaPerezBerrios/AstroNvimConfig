@@ -13,10 +13,7 @@ return {
       codelens = true, -- enable/disable codelens refresh on start
       inlay_hints = false, -- enable/disable inlay hints on start
       semantic_tokens = true, -- enable/disable semantic token highlighting
-    },
-    defaults = {
-      hover = false,
-      signature_help = false,
+      signature_help = true,
     },
 
     -- customize lsp formatting options
