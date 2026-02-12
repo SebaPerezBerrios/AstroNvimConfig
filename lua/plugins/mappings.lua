@@ -163,20 +163,32 @@ return {
 
     opts.mappings.n["<Leader>n"] = nil
 
-    opts.mappings.n["<Leader>rn"] = { "<cmd>Lspsaga rename<CR>", desc = "LSP rename" }
-    opts.mappings.n["<Leader>i"] = { "<cmd>Lspsaga code_action<CR>", desc = "LSP code action" }
-    opts.mappings.v["<Leader>i"] = { "<cmd>Lspsaga code_action<CR>", desc = "LSP code action" }
+    local function diagnostic_jump(dir, severity)
+      local jump_opts = {}
+      if type(severity) == "string" then jump_opts.severity = vim.diagnostic.severity[severity] end
+      return function()
+        jump_opts.count = dir and vim.v.count1 or -vim.v.count1
+        vim.diagnostic.jump(jump_opts)
+      end
+    end
 
     opts.mappings.n["gn"] = {
-      function() require("lspsaga.diagnostic"):goto_next { severity = vim.diagnostic.severity.ERROR } end,
+      diagnostic_jump(true),
       desc = "LSP diagnostics next",
     }
+
     opts.mappings.n["gm"] = {
-      function() require("lspsaga.diagnostic"):goto_prev { severity = vim.diagnostic.severity.ERROR } end,
+      diagnostic_jump(false),
       desc = "LSP diagnostics prev",
     }
-    opts.mappings.n["gh"] = { "<cmd>Lspsaga hover_doc<CR>", desc = "LSP hover" }
-    -- opts.mappings.n["gh"] = { "<cmd>lua vim.lsp.buf.hover()<CR>", desc = "LSP hover" }
+
+    opts.mappings.n["<Leader>rn"] = { vim.lsp.buf.rename, desc = "LSP rename" }
+    opts.mappings.n["gh"] = {
+      function() vim.lsp.buf.hover {} end,
+      desc = "LSP hover",
+    }
+    opts.mappings.n["<Leader>i"] = { function() vim.lsp.buf.code_action {} end, desc = "LSP code action" }
+    opts.mappings.v["<Leader>i"] = { function() vim.lsp.buf.code_action {} end, desc = "LSP code action" }
 
     opts.mappings.n["<Leader>D"] = { "<cmd>DiffviewOpen<CR>", desc = "Diff view Open" }
     opts.mappings.n["<Leader>S"] = { "<cmd>DiffviewClose<CR>", desc = "Diff view Close" }
