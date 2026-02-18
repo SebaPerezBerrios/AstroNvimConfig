@@ -61,19 +61,24 @@ return {
       desc = "Replace selection",
     }
 
-    opts.mappings.n["w"] = { "<Plug>CamelCaseMotion_w", desc = "w" }
-    opts.mappings.n["b"] = { "<Plug>CamelCaseMotion_b", desc = "b" }
-    opts.mappings.n["e"] = { "<Plug>CamelCaseMotion_e", desc = "e" }
-    opts.mappings.n["ge"] = { "<Plug>CamelCaseMotion_ge", desc = "ge" }
-    opts.mappings.v["w"] = { "<Plug>CamelCaseMotion_w", desc = "w" }
-    opts.mappings.v["b"] = { "<Plug>CamelCaseMotion_b", desc = "b" }
-    opts.mappings.v["e"] = { "<Plug>CamelCaseMotion_e", desc = "e" }
-    opts.mappings.v["ge"] = { "<Plug>CamelCaseMotion_ge", desc = "ge" }
+    opts.mappings.n["w"] = { function() require("spider").motion "w" end, desc = "w" }
+    opts.mappings.n["b"] = { function() require("spider").motion "b" end, desc = "b" }
+    opts.mappings.n["e"] = { function() require("spider").motion "e" end, desc = "e" }
+    opts.mappings.n["ge"] = { function() require("spider").motion "ge" end, desc = "ge" }
+    opts.mappings.v["w"] = { function() require("spider").motion "w" end, desc = "w" }
+    opts.mappings.v["b"] = { function() require("spider").motion "b" end, desc = "b" }
+    opts.mappings.v["e"] = { function() require("spider").motion "e" end, desc = "e" }
+    opts.mappings.v["ge"] = { function() require("spider").motion "ge" end, desc = "ge" }
+    opts.mappings.x["w"] = { function() require("spider").motion "w" end, desc = "w" }
+    opts.mappings.x["b"] = { function() require("spider").motion "b" end, desc = "b" }
+    opts.mappings.x["e"] = { function() require("spider").motion "e" end, desc = "e" }
+    opts.mappings.x["ge"] = { function() require("spider").motion "ge" end, desc = "ge" }
 
     opts.mappings.n["<Leader>j"] = { "<cmd>HopLineAC<CR>", desc = "Jump down" }
     opts.mappings.n["<Leader>k"] = { "<cmd>HopLineBC<CR>", desc = "Jump up" }
     opts.mappings.n["f"] = { "<cmd>HopWordCurrentLine<CR>", desc = "Jump current line" }
     opts.mappings.n["<CR>"] = { "<cmd>HopWord<CR>", desc = "Jump word" }
+    opts.mappings.n["<Leader>s"] = { "<cmd>HopChar2<CR>", desc = "Jump word" }
     opts.mappings.n["dj"] = { "<cmd>HopNodes<CR>", desc = "Jump Tree sitter nodes" }
 
     -- Macro

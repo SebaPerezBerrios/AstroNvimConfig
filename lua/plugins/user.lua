@@ -43,8 +43,8 @@ return {
   },
 
   {
-    "bkad/CamelCaseMotion",
-    lazy = false,
+    "chrisgrieser/nvim-spider",
+    lazy = true,
   },
 
   {
