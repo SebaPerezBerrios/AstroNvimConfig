@@ -53,13 +53,7 @@ return {
   {
     "kylechui/nvim-surround",
     lazy = false,
-    config = function()
-      require("nvim-surround").setup {
-        keymaps = {
-          visual = "ys",
-        },
-      }
-    end,
+    config = function() require("nvim-surround").setup {} end,
   },
 
   {
