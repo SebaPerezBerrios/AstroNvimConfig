@@ -120,7 +120,7 @@ return {
         opts.mappings.n.gf[1] = function()
           require("snacks.picker").lsp_references {
             focus = "list",
-            include_current = false,
+            include_current = true,
           }
         end
         opts.mappings.n["<Leader>lR"] = nil
