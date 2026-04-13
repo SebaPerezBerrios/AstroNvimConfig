@@ -114,7 +114,6 @@ return {
 
     opts.mappings.n["<Leader>e"] = { "<cmd>BufferLinePick<CR>" }
     opts.mappings.n["<Leader>pt"] = opts.mappings.n["<Leader>ft"]
-    opts.mappings.n["<Leader>x"] = opts.mappings.n["<Leader>f/"]
     opts.mappings.n["<Leader>c"] = opts.mappings.n["<Leader>fC"]
     opts.mappings.n["<c-f>"] = opts.mappings.n["<Leader>n"]
 
@@ -188,12 +187,10 @@ return {
     }
 
     opts.mappings.n["<Leader>rn"] = { vim.lsp.buf.rename, desc = "LSP rename" }
-    opts.mappings.n["gh"] = {
-      function() vim.lsp.buf.hover {} end,
-      desc = "LSP hover",
-    }
-    opts.mappings.n["<Leader>i"] = { function() vim.lsp.buf.code_action {} end, desc = "LSP code action" }
-    opts.mappings.v["<Leader>i"] = { function() vim.lsp.buf.code_action {} end, desc = "LSP code action" }
+
+    opts.mappings.n["gh"] = { vim.lsp.buf.hover, desc = "LSP hover" }
+    opts.mappings.n["<Leader>i"] = { vim.lsp.buf.code_action, desc = "LSP code action" }
+    opts.mappings.v["<Leader>i"] = { vim.lsp.buf.code_action, desc = "LSP code action" }
 
     opts.mappings.n["<Leader>D"] = { "<cmd>DiffviewOpen<CR>", desc = "Diff view Open" }
     opts.mappings.n["<Leader>S"] = { "<cmd>DiffviewClose<CR>", desc = "Diff view Close" }

@@ -1,5 +1,5 @@
 return {
-  "Shatur/neovim-session-manager",
+  "shatur/neovim-session-manager",
   lazy = false,
   config = function()
     local config = require "session_manager.config"

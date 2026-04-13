@@ -1,3 +1,5 @@
+if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+
 -- Customize Mason
 
 ---@type LazySpec
@@ -16,7 +18,7 @@ return {
         "stylua",
 
         -- install debuggers
-        -- "debugpy",
+        "debugpy",
 
         -- install any other package
         "tree-sitter-cli",

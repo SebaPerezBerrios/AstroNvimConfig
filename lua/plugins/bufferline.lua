@@ -2,7 +2,7 @@ return {
   "akinsho/bufferline.nvim",
   event = "VeryLazy",
   dependencies = {
-    -- { import = "astrocommunity.recipes.disable-tabline" }, -- dependency before loading rest of the spec
+    { import = "astrocommunity.recipes.disable-tabline" }, -- dependency before loading rest of the spec
   },
   config = function()
     local bufferline = require "bufferline"
@@ -41,3 +41,4 @@ return {
     }
   end,
 }
+
