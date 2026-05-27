@@ -78,7 +78,7 @@ return {
     opts.mappings.n["<Leader>k"] = { "<cmd>HopLineBC<CR>", desc = "Jump up" }
     opts.mappings.n["f"] = { "<cmd>HopWordCurrentLine<CR>", desc = "Jump current line" }
     opts.mappings.n["<CR>"] = { "<cmd>HopWord<CR>", desc = "Jump word" }
-    opts.mappings.n["<Leader>s"] = { "<cmd>HopChar2<CR>", desc = "Jump word" }
+    opts.mappings.n["<Leader>h"] = { "<cmd>HopChar2<CR>", desc = "Jump word" }
     opts.mappings.n["dj"] = { "<cmd>HopNodes<CR>", desc = "Jump Tree sitter nodes" }
 
     -- Macro
