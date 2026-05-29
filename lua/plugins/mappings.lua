@@ -48,31 +48,33 @@ return {
     opts.mappings.t["<C-x>"] = { "<C-\\><C-n>", desc = "Terminal normal mode" }
 
     -- Replace
+    local substitute = require "substitute"
     opts.mappings.n["rm"] = {
-      function() require("substitute").operator() end,
+      substitute.operator,
       desc = "Replace motion",
     }
     opts.mappings.n["rmm"] = {
-      function() require("substitute").line() end,
+      substitute.line,
       desc = "Replace line",
     }
     opts.mappings.v["rm"] = {
-      function() require("substitute").visual() end,
+      substitute.line,
       desc = "Replace selection",
     }
 
-    opts.mappings.n["w"] = { function() require("spider").motion "w" end, desc = "w" }
-    opts.mappings.n["b"] = { function() require("spider").motion "b" end, desc = "b" }
-    opts.mappings.n["e"] = { function() require("spider").motion "e" end, desc = "e" }
-    opts.mappings.n["ge"] = { function() require("spider").motion "ge" end, desc = "ge" }
-    opts.mappings.v["w"] = { function() require("spider").motion "w" end, desc = "w" }
-    opts.mappings.v["b"] = { function() require("spider").motion "b" end, desc = "b" }
-    opts.mappings.v["e"] = { function() require("spider").motion "e" end, desc = "e" }
-    opts.mappings.v["ge"] = { function() require("spider").motion "ge" end, desc = "ge" }
-    opts.mappings.x["w"] = { function() require("spider").motion "w" end, desc = "w" }
-    opts.mappings.x["b"] = { function() require("spider").motion "b" end, desc = "b" }
-    opts.mappings.x["e"] = { function() require("spider").motion "e" end, desc = "e" }
-    opts.mappings.x["ge"] = { function() require("spider").motion "ge" end, desc = "ge" }
+    local spider = require "spider"
+    opts.mappings.n["w"] = { function() spider.motion "w" end, desc = "w" }
+    opts.mappings.n["b"] = { function() spider.motion "b" end, desc = "b" }
+    opts.mappings.n["e"] = { function() spider.motion "e" end, desc = "e" }
+    opts.mappings.n["ge"] = { function() spider.motion "ge" end, desc = "ge" }
+    opts.mappings.v["w"] = { function() spider.motion "w" end, desc = "w" }
+    opts.mappings.v["b"] = { function() spider.motion "b" end, desc = "b" }
+    opts.mappings.v["e"] = { function() spider.motion "e" end, desc = "e" }
+    opts.mappings.v["ge"] = { function() spider.motion "ge" end, desc = "ge" }
+    opts.mappings.x["w"] = { function() spider.motion "w" end, desc = "w" }
+    opts.mappings.x["b"] = { function() spider.motion "b" end, desc = "b" }
+    opts.mappings.x["e"] = { function() spider.motion "e" end, desc = "e" }
+    opts.mappings.x["ge"] = { function() spider.motion "ge" end, desc = "ge" }
 
     opts.mappings.n["<Leader>j"] = { "<cmd>HopLineAC<CR>", desc = "Jump down" }
     opts.mappings.n["<Leader>k"] = { "<cmd>HopLineBC<CR>", desc = "Jump up" }
@@ -95,9 +97,11 @@ return {
     opts.mappings.n["<Leader>F"] = opts.mappings.n["<Leader>fW"]
     opts.mappings.n["<Leader>b"] = opts.mappings.n["<Leader>fb"]
 
+    local picker = require "snacks.picker"
+
     opts.mappings.n["<Leader>b"] = {
       function()
-        require("snacks.picker").buffers {
+        picker.buffers {
           hidden = false,
           win = {
             input = {
@@ -227,10 +231,11 @@ return {
     vim.api.nvim_set_keymap("t", "<C-S-v>", "<C-R>+", { noremap = true, silent = true })
     vim.api.nvim_set_keymap("v", "<C-S-v>", "<C-R>+", { noremap = true, silent = true })
 
-    vim.keymap.set("n", "<C-h>", require("smart-splits").move_cursor_left)
-    vim.keymap.set("n", "<C-j>", require("smart-splits").move_cursor_down)
-    vim.keymap.set("n", "<C-k>", require("smart-splits").move_cursor_up)
-    vim.keymap.set("n", "<C-l>", require("smart-splits").move_cursor_right)
-    vim.keymap.set("n", "<C-p>", require("smart-splits").move_cursor_previous)
+    local splits = require "smart-splits"
+    vim.keymap.set("n", "<C-h>", splits.move_cursor_left)
+    vim.keymap.set("n", "<C-j>", splits.move_cursor_down)
+    vim.keymap.set("n", "<C-k>", splits.move_cursor_up)
+    vim.keymap.set("n", "<C-l>", splits.move_cursor_right)
+    vim.keymap.set("n", "<C-p>", splits.move_cursor_previous)
   end,
 }

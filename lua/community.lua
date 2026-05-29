@@ -12,5 +12,6 @@ return {
   { import = "astrocommunity.pack.go" },
   { import = "astrocommunity.pack.rust" },
   { import = "astrocommunity.pack.java" },
+  { import = "astrocommunity.pack.cpp" },
   { import = "astrocommunity.search.nvim-spectre" },
 }
