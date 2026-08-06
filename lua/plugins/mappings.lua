@@ -81,17 +81,6 @@ return {
     opts.mappings.n["f"] = { "<cmd>HopWordCurrentLine<CR>", desc = "Jump current line" }
     opts.mappings.n["<CR>"] = { "<cmd>HopWord<CR>", desc = "Jump word" }
     opts.mappings.n["<Leader>h"] = { "<cmd>HopChar2<CR>", desc = "Jump word" }
-    opts.mappings.n["dj"] = { "<cmd>HopNodes<CR>", desc = "Jump Tree sitter nodes" }
-
-    -- Macro
-    opts.mappings.n["q"] = { "<nop>", desc = "q" }
-
-    -- S
-    opts.mappings.n["s"] = { "<nop>", desc = "s" }
-    opts.mappings.n["S"] = { "<nop>", desc = "S" }
-
-    -- C-c
-    opts.mappings.n["<C-c>"] = { "<nop>", desc = "<C-c>" }
 
     opts.mappings.n["<Leader>f"] = opts.mappings.n["<Leader>fw"]
     opts.mappings.n["<Leader>F"] = opts.mappings.n["<Leader>fW"]
@@ -200,8 +189,6 @@ return {
     opts.mappings.n["<Leader>S"] = { "<cmd>DiffviewClose<CR>", desc = "Diff view Close" }
     opts.mappings.n["`"] = { "<Esc>" }
     opts.mappings.n["x"] = { "<Esc>" }
-    opts.mappings.v["J"] = { "<Nop>" }
-    opts.mappings.v["K"] = { "<Nop>" }
 
     opts.mappings.n["<C-o>"] = { "<cmd>Portal jumplist backward<cr>" }
     opts.mappings.n["<C-i>"] = { "<cmd>Portal jumplist forward<cr>" }

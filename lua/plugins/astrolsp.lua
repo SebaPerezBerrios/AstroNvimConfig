@@ -53,6 +53,21 @@ return {
           },
         },
       },
+      jdtls = {
+        settings = {
+          java = {
+            configuration = {
+              runtimes = {
+                {
+                  name = "Java11",
+                  path = "/usr/lib/jvm/java-11-openjdk",
+                  default = true,
+                },
+              },
+            },
+          },
+        },
+      },
     },
     -- customize how language servers are attached
     handlers = {

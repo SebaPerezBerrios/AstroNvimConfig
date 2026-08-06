@@ -8,6 +8,15 @@ return {
   "AstrastrocoreoNvim/astrocore",
   ---@type AstroCoreOpts
   opts = {
+    autocmds = {
+      disable_markdown_conceal = {
+        {
+          event = "FileType",
+          pattern = { "markdown" },
+          callback = function() vim.opt_local.concealcursor = "nv" end,
+        },
+      },
+    },
     -- Configure core features of AstroNvim
     features = {
       large_buf = false, -- set global limits for large files for disabling features like treesitter
@@ -54,7 +63,18 @@ return {
     -- NOTE: keycodes follow the casing in the vimdocs. For example, `<Leader>` must be capitalized
     mappings = {
       -- first key is the mode
+      v = {
+        ["J"] = false,
+        ["K"] = false,
+      },
       n = {
+        ["dj"] = { "<Nop>" },
+        ["dk"] = { "<Nop>" },
+        ["D"] = { "<Nop>" },
+        ["q"] = false,
+        ["s"] = false,
+        ["S"] = false,
+        ["C-c"] = false,
         -- -- second key is the lefthand side of the map
 
         -- -- navigate buffer tabs

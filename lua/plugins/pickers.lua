@@ -53,6 +53,16 @@ return {
         desc = "Search diagnostics",
       }
 
+      opts.mappings.n["<Leader>lg"] = {
+        function()
+          require("snacks.picker").diagnostics_buffer {
+            focus = "list",
+            severity = vim.diagnostic.severity.WARN,
+          }
+        end,
+        desc = "Search buffer diagnostics",
+      }
+
       opts.mappings.n["<Leader>;"] = {
         function()
           require("snacks.picker").lsp_outgoing_calls {
