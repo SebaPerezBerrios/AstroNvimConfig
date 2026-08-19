@@ -12,16 +12,16 @@ return {
       vim.g.gruvbox_material_statusline_style = "default"
     end,
   },
-
-  {
-    "rebelot/kanagawa.nvim",
-    lazy = false,
-    config = function()
-      require("kanagawa").setup {
-        keywordStyle = { italic = false },
-        dimInactive = true,
-      }
-    end,
-  },
+ {
+      'sainnhe/everforest',
+      lazy = false,
+      priority = 1000,
+      config = function()
+        -- Optionally configure and load the colorscheme
+        -- directly inside the plugin declaration.
+        vim.g.everforest_enable_italic = true
+        vim.g.everforest_background = 'hard'
+      end
+    }
 }
 

@@ -63,18 +63,11 @@ return {
     }
 
     local spider = require "spider"
-    opts.mappings.n["w"] = { function() spider.motion "w" end, desc = "w" }
-    opts.mappings.n["b"] = { function() spider.motion "b" end, desc = "b" }
-    opts.mappings.n["e"] = { function() spider.motion "e" end, desc = "e" }
-    opts.mappings.n["ge"] = { function() spider.motion "ge" end, desc = "ge" }
-    opts.mappings.v["w"] = { function() spider.motion "w" end, desc = "w" }
-    opts.mappings.v["b"] = { function() spider.motion "b" end, desc = "b" }
-    opts.mappings.v["e"] = { function() spider.motion "e" end, desc = "e" }
-    opts.mappings.v["ge"] = { function() spider.motion "ge" end, desc = "ge" }
-    opts.mappings.x["w"] = { function() spider.motion "w" end, desc = "w" }
-    opts.mappings.x["b"] = { function() spider.motion "b" end, desc = "b" }
-    opts.mappings.x["e"] = { function() spider.motion "e" end, desc = "e" }
-    opts.mappings.x["ge"] = { function() spider.motion "ge" end, desc = "ge" }
+
+    for _, key in ipairs({"w","b","e","ge"}) do
+      opts.mappings.n[key] = { function() spider.motion(key) end, desc = key }
+    end
+
 
     opts.mappings.n["<Leader>j"] = { "<cmd>HopLineAC<CR>", desc = "Jump down" }
     opts.mappings.n["<Leader>k"] = { "<cmd>HopLineBC<CR>", desc = "Jump up" }
