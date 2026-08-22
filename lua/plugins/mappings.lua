@@ -64,10 +64,9 @@ return {
 
     local spider = require "spider"
 
-    for _, key in ipairs({"w","b","e","ge"}) do
+    for _, key in ipairs { "w", "b", "e", "ge" } do
       opts.mappings.n[key] = { function() spider.motion(key) end, desc = key }
     end
-
 
     opts.mappings.n["<Leader>j"] = { "<cmd>HopLineAC<CR>", desc = "Jump down" }
     opts.mappings.n["<Leader>k"] = { "<cmd>HopLineBC<CR>", desc = "Jump up" }

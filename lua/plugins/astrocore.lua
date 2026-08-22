@@ -49,7 +49,7 @@ return {
         wrap = true, -- sets vim.opt.wrap
         showtabline = 2,
         laststatus = 2,
-        background = "dark",
+        background = "light",
         foldcolumn = "0",
         scrolloff = 2,
       },

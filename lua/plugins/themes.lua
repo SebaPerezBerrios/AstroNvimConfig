@@ -12,16 +12,17 @@ return {
       vim.g.gruvbox_material_statusline_style = "default"
     end,
   },
- {
-      'sainnhe/everforest',
-      lazy = false,
-      priority = 1000,
-      config = function()
-        -- Optionally configure and load the colorscheme
-        -- directly inside the plugin declaration.
-        vim.g.everforest_enable_italic = true
-        vim.g.everforest_background = 'hard'
-      end
-    }
+  {
+    "sainnhe/everforest",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      -- Optionally configure and load the colorscheme
+      -- directly inside the plugin declaration.
+      vim.g.everforest_enable_italic = true
+      vim.g.everforest_background = "medium"
+      vim.g.everforest_float_style = "blend"
+      vim.g.everforest_pmenu_style = "blend"
+    end,
+  },
 }
-
